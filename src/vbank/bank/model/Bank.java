@@ -33,5 +33,17 @@ public class Bank {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-
+	public boolean doTransaction(Account payer, Account payee, long value) {
+		try {
+			Transfer transfer = payer.transfer(value, payee);
+			if(transfer!=null) {
+				transfers.add(transfer);
+				return true;
+			}
+			return false;
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
+		}
+	}
 }

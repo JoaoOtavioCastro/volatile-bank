@@ -68,8 +68,12 @@ public class Account {
 		this.identity = identity;
 	}
 
-	public void withdrawal(long value) {
-		this.balance -= value;
+	public boolean withdrawal(long value) {
+		if (this.balance > value) {
+			this.balance -= value;
+			return true;
+		}
+		return false;
 	}
 
 	public void deposit(long value) {
