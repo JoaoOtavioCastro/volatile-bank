@@ -56,6 +56,14 @@ public class Bank {
 				.filter(transfer -> (transfer.getPayee() == querry || transfer.getPayer() == querry)).toList();
 	}
 
+	public Account searchAccount(String identity) {
+		for (Account acc : accounts ){
+			if(acc.getIdentity().equals(identity))
+				return acc;
+		}
+		return null;
+	}
+	
 	@Override
 	public String toString() {
 		return "Bank [name=" + name + ", number=" + number + ", count_accounts=" + accounts.size()
