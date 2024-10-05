@@ -90,11 +90,18 @@ public class Account {
 		if (this.balance < value) {
 			return null;
 		}
-		if(value<=0) {
+		if (value <= 0) {
 			return null;
 		}
 		this.withdrawal(value);
 		payee.deposit(value);
 		return new Transfer(this, payee, value);
 	}
+
+	@Override
+	public String toString() {
+		return "Account [number=" + number + ", agency=" + agency + ", balance=" + balance + ", owner=" + owner
+				+ ", identity=" + identity + "]";
+	}
+
 }

@@ -36,10 +36,11 @@ public class Bank {
 	public void setNumber(String number) {
 		this.number = number;
 	}
+
 	public boolean doTransaction(Account payer, Account payee, long value) {
 		try {
 			Transfer transfer = payer.transfer(value, payee);
-			if(transfer!=null) {
+			if (transfer != null) {
 				transfers.add(transfer);
 				return true;
 			}
@@ -49,4 +50,11 @@ public class Bank {
 			return false;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Bank [name=" + name + ", number=" + number + ", count_accounts=" + accounts.size()
+				+ ", count_transfers=" + transfers.size() + "]";
+	}
+
 }
