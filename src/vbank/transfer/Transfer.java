@@ -1,8 +1,8 @@
-package vbank.transfer.model;
+package vbank.transfer;
 
 import java.time.LocalDateTime;
 
-import vbank.account.model.Account;
+import vbank.account.Account;
 
 public class Transfer {
 	private Account payer;
@@ -33,5 +33,11 @@ public class Transfer {
 	public LocalDateTime getDate() {
 		return date;
 	}
+
+	@Override
+	public String toString() {
+		return "Transfer [payer=" + payer.getIdentity() + ", payee=" + payee.getIdentity() + ", value=" + value + ", date=" + date + "]";
+	}
+	
 
 }
