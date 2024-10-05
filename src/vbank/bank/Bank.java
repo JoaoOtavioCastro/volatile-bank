@@ -51,19 +51,27 @@ public class Bank {
 		}
 	}
 
-	public List<Transfer> searchTransfer(Account querry) {
+	public List<Transfer> getTransfer(Account querry) {
 		return this.transfers.stream()
 				.filter(transfer -> (transfer.getPayee() == querry || transfer.getPayer() == querry)).toList();
 	}
 
-	public Account searchAccount(String identity) {
-		for (Account acc : accounts ){
-			if(acc.getIdentity().equals(identity))
+	public Account getAccount(String identity) {
+		for (Account acc : accounts) {
+			if (acc.getIdentity().equals(identity))
 				return acc;
 		}
 		return null;
 	}
-	
+
+	public List<Transfer> getAllTransfer() {
+		return transfers;
+	}
+
+	public List<Account> getAllAccounts() {
+		return accounts;
+	}
+
 	@Override
 	public String toString() {
 		return "Bank [name=" + name + ", number=" + number + ", count_accounts=" + accounts.size()
