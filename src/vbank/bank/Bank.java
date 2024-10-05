@@ -51,6 +51,11 @@ public class Bank {
 		}
 	}
 
+	public List<Transfer> searchTransfer(Account querry) {
+		return this.transfers.stream()
+				.filter(transfer -> (transfer.getPayee() == querry || transfer.getPayer() == querry)).toList();
+	}
+
 	@Override
 	public String toString() {
 		return "Bank [name=" + name + ", number=" + number + ", count_accounts=" + accounts.size()
