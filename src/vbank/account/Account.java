@@ -100,7 +100,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [number=" + number + ", agency=" + agency + ", balance=" + balance + ", owner=" + owner
+		return "Account [number=" + number + ", agency=" + agency + ", balance=" + Util.showValue(balance) + ", owner=" + owner
 				+ ", identity=" + identity + "]";
 	}
 
