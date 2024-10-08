@@ -184,6 +184,7 @@ public class AccountCLI {
 		int agency = 1;
 		System.out.println("type the identity:");
 		String identity = scan.nextLine();
+		System.out.println("type the Owner Name:");
 		String owner = scan.nextLine();
 		scan.close();
 		return new Account(agency, number, owner, identity);
