@@ -1,7 +1,9 @@
 package vbank.bank;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import vbank.account.Account;
 import vbank.transfer.Transfer;
@@ -9,15 +11,15 @@ import vbank.transfer.Transfer;
 public class Bank {
 	private String name;
 	private String number;
-	private List<Account> accounts;
+	private Map<Integer, Account> accounts;
 	private List<Transfer> transfers;
 
 	public Bank() {
 		super();
 		this.setNumber("0001");
 		this.setName("The Bank");
-		this.accounts = new ArrayList<Account>();
-		this.accounts.add(new Account());
+		this.accounts = new HashMap<Integer, Account>();
+		this.accounts.put(accounts.size(), new Account());
 		this.transfers = new ArrayList<Transfer>();
 	}
 
@@ -56,22 +58,16 @@ public class Bank {
 				.filter(transfer -> (transfer.getPayee() == querry || transfer.getPayer() == querry)).toList();
 	}
 
-	public Account getAccount(String identity) {
-		for (Account acc : accounts) {
-			if (acc.getIdentity().equals(identity))
-				return acc;
-		}
-		return null;
-	}
-
 	public List<Transfer> getAllTransfer() {
 		return transfers;
 	}
 
-	public List<Account> getAllAccounts() {
+	public Map<Integer, Account> getAllAccounts() {
 		return accounts;
 	}
-
+	public void addAccount(Account acc) {
+		accounts.put(accounts.size(), acc);
+	}
 	@Override
 	public String toString() {
 		return "Bank [name=" + name + ", number=" + number + ", count_accounts=" + accounts.size()
