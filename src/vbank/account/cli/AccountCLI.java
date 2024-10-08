@@ -1,5 +1,6 @@
 package vbank.account.cli;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import vbank.account.Account;
@@ -11,6 +12,7 @@ public class AccountCLI {
 	public AccountCLI(Account account) {
 		super();
 		this.account = account;
+		this.sc = new Scanner(System.in);
 	}
 
 	public void showAccount() {
@@ -23,8 +25,8 @@ public class AccountCLI {
 		boolean stop = false;
 		do {
 			showAccount();
-			System.out
-					.println("\nType the number to the function: " + "\n1 - Update Account" + "\n2 - Do Transactions");
+			System.out.println("\nType the number to the function: " + "\n1 - Update Account" + "\n2 - Do Transactions"
+					+ "\n0- Stop");
 			int option = sc.nextInt();
 			try {
 				switch (option) {
@@ -57,7 +59,7 @@ public class AccountCLI {
 		do {
 			showAccount();
 			System.out.println("\nType the number to the function: " + "\n1 - Update Account Number"
-					+ "\n2 - Update Account Owner Name" + "\n3 - Update Account Agency Number");
+					+ "\n2 - Update Account Owner Name" + "\n3 - Update Account Agency Number" + "\n0- Stop");
 			int option = sc.nextInt();
 
 			try {
@@ -91,7 +93,8 @@ public class AccountCLI {
 		do {
 			showAccount();
 			try {
-				System.out.println("\nType the number to the function: " + "\n1 - Do Deposit" + "\n2 - Do Withdrawal");
+				System.out.println("\nType the number to the function: " + "\n1 - Do Deposit" + "\n2 - Do Withdrawal+ "
+						+ "\n0- Stop");
 				int option = sc.nextInt();
 				switch (option) {
 				case 1:
@@ -171,5 +174,18 @@ public class AccountCLI {
 			System.out.println(e.getMessage());
 			return false;
 		}
+	}
+
+	public static Account createAccount() {
+		Scanner scan = new Scanner(System.in);
+		Random rn = new Random();
+		System.out.println("New Account:");
+		int number = rn.nextInt();
+		int agency = 1;
+		System.out.println("type the identity:");
+		String identity = scan.nextLine();
+		String owner = scan.nextLine();
+		scan.close();
+		return new Account(agency, number, owner, identity);
 	}
 }
