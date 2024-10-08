@@ -41,7 +41,7 @@ public class AccountCLI {
 			
 			showAccount();
 			if (stop) {
-				System.out.println("\nWant to update another info? (y / n)");
+				System.out.println("\nWant to do another transaction? (y / n)");
 				char opt = sc.next().charAt(0);
 				if (opt == 'y') {
 					updateAccount();
