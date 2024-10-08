@@ -100,8 +100,12 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [number=" + number + ", agency=" + agency + ", balance=" + Util.showValue(balance) + ", owner=" + owner
-				+ ", identity=" + identity + "]";
+		return "Account [number=" + number + ", agency=" + agency + ", balance=" + Util.showValue(balance) + ", owner="
+				+ owner + ", identity=" + identity + "]";
+	}
+
+	public String basictoString(int id) {
+		return "Account [id=" + id + "number=" + number + ", owner=" + owner + ", identity=" + identity + "]";
 	}
 
 }
