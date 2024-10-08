@@ -68,6 +68,9 @@ public class Bank {
 	public void addAccount(Account acc) {
 		accounts.put(accounts.size(), acc);
 	}
+	public void addTransfer(Transfer tf) {
+		this.transfers.add(tf);
+	}
 	@Override
 	public String toString() {
 		return "Bank [name=" + name + ", number=" + number + ", count_accounts=" + accounts.size()
