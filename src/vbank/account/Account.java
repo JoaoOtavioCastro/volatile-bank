@@ -31,7 +31,7 @@ public class Account {
 	public String showNumber() {
 		return String.format("%010d", this.number);
 	}
-
+	
 	public int getNumber() {
 		return number;
 	}
@@ -100,7 +100,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [number=" + number + ", agency=" + agency + ", balance=" + Util.showValue(balance) + ", owner="
+		return "Account [number=" + showNumber() + ", agency=" + agency + ", balance=" + Util.showValue(balance) + ", owner="
 				+ owner + ", identity=" + identity + "]";
 	}
 
