@@ -1,10 +1,12 @@
 package vbank.app;
 
+import vbank.bank.cli.BankCLI;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		BankCLI bank = new BankCLI();
+		bank.showBankCLI();
 	}
 
 }
