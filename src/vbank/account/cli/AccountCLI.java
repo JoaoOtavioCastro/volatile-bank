@@ -23,25 +23,25 @@ public class AccountCLI {
 		boolean stop = false;
 		do {
 			showAccount();
-			System.out.println("\nType the number to the function: " + "\n1 - Update Account"
-					+ "\n2 - Do Transactions");
+			System.out
+					.println("\nType the number to the function: " + "\n1 - Update Account" + "\n2 - Do Transactions");
 			int option = sc.nextInt();
 			try {
-			switch (option) {
-			case 1: 
-				updateAccount();
-			case 2:
-				doTransactions();
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + option);
-			}
-			}catch (Exception e) {
+				switch (option) {
+				case 1:
+					updateAccount();
+				case 2:
+					doTransactions();
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + option);
+				}
+			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-			
+
 			showAccount();
 			if (stop) {
-				System.out.println("\nWant to do another transaction? (y / n)");
+				System.out.println("\nWant to do another anything? (y / n)");
 				char opt = sc.next().charAt(0);
 				if (opt == 'y') {
 					updateAccount();
@@ -51,7 +51,7 @@ public class AccountCLI {
 		} while (!stop);
 		sc.close();
 	}
-	
+
 	private void updateAccount() {
 		boolean stop = false;
 		do {
@@ -91,23 +91,22 @@ public class AccountCLI {
 		do {
 			showAccount();
 			try {
-			System.out.println("\nType the number to the function: " + "\n1 - Do Deposit"
-					+ "\n2 - Do Withdrawal");
-			int option = sc.nextInt();
-			switch (option) {
-			case 1: 
-				stop = doDeposit();
-			case 2:
-				stop = doWithdrawal();
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + option);
-			}
-			}catch (Exception e) {
+				System.out.println("\nType the number to the function: " + "\n1 - Do Deposit" + "\n2 - Do Withdrawal");
+				int option = sc.nextInt();
+				switch (option) {
+				case 1:
+					stop = doDeposit();
+				case 2:
+					stop = doWithdrawal();
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + option);
+				}
+			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 			showAccount();
 			if (stop) {
-				System.out.println("\nWant to update another info? (y / n)");
+				System.out.println("\nWant to do another transaction? (y / n)");
 				char opt = sc.next().charAt(0);
 				if (opt == 'y') {
 					updateAccount();
@@ -116,6 +115,7 @@ public class AccountCLI {
 		} while (!stop);
 
 	}
+
 	private boolean updateNumber() {
 		try {
 			System.out.println("Type the new Account Number");
