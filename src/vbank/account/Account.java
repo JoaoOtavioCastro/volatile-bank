@@ -11,13 +11,14 @@ public class Account {
 	protected String identity;
 	private Util util = Util.getInstance();
 
-	public Account(int agency, int balance, String owner, String identity) {
+	public Account(int agency, int number, long balance, String owner, String identity) {
 		super();
 		this.number = util.generateAccount();
 		this.agency = agency;
 		this.balance = balance;
 		this.owner = owner;
 		this.identity = identity;
+		this.number = number;
 	}
 
 	public Account() {
@@ -31,7 +32,7 @@ public class Account {
 	public String showNumber() {
 		return String.format("%010d", this.number);
 	}
-	
+
 	public int getNumber() {
 		return number;
 	}
@@ -100,8 +101,8 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [number=" + showNumber() + ", agency=" + agency + ", balance=" + Util.showValue(balance) + ", owner="
-				+ owner + ", identity=" + identity + "]";
+		return "Account [number=" + showNumber() + ", agency=" + agency + ", balance=" + Util.showValue(balance)
+				+ ", owner=" + owner + ", identity=" + identity + "]";
 	}
 
 	public String basictoString(int id) {

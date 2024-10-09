@@ -13,10 +13,10 @@ class AccountTest {
 	
 	Random rn = new Random();
 
-	Account payer1 = new Account(1, 10000, "Harry Potter", "123.123.123-12");
-	Account payer2 = new Account(1, 50000, "Peter Pan", "321.321.321.32");
-	Account payee1 = new Account(1, 10000, "Clark Kent", "555.555.555-55");
-	Account payee2 = new Account(1, 50000, "Brad Pitt", "222.222.222-22");
+	Account payer1 = new Account(1, rn.nextInt(Integer.MAX_VALUE), 10000, "Harry Potter", "123.123.123-12");
+	Account payer2 = new Account(1, rn.nextInt(Integer.MAX_VALUE), 50000, "Peter Pan", "321.321.321.32");
+	Account payee1 = new Account(1, rn.nextInt(Integer.MAX_VALUE), 10000, "Clark Kent", "555.555.555-55");
+	Account payee2 = new Account(1, rn.nextInt(Integer.MAX_VALUE), 50000, "Brad Pitt", "222.222.222-22");
 	Transfer transfer = null;
 	
 	@Test
