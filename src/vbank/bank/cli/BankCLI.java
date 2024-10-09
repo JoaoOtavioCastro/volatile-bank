@@ -30,14 +30,22 @@ public class BankCLI {
 				switch (option) {
 				case 1:
 					showAccounts(0, 10);
+					break;
 				case 2:
 					showTransfers();
+					break;
 				case 3:
 					selectAccount();
+					break;
 				case 4:
 					newAccount();
+					break;
 				case 5:
 					newTransfer();
+					break;
+				case 0:
+					stop = true;
+					break;
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + option);
 				}

@@ -51,7 +51,6 @@ public class AccountCLI {
 			}
 
 		} while (!stop);
-		sc.close();
 	}
 
 	private void updateAccount() {
@@ -66,10 +65,16 @@ public class AccountCLI {
 				switch (option) {
 				case 1:
 					stop = updateNumber();
+					break;
 				case 2:
 					stop = updateOwner();
+					break;
 				case 3:
 					stop = updateAgency();
+					break;
+				case 0:
+					stop = true;
+					break;
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + option);
 				}
@@ -99,8 +104,13 @@ public class AccountCLI {
 				switch (option) {
 				case 1:
 					stop = doDeposit();
+					break;
 				case 2:
 					stop = doWithdrawal();
+					break;
+				case 0:
+					stop = true;
+					break;
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + option);
 				}
@@ -186,7 +196,6 @@ public class AccountCLI {
 		String identity = scan.nextLine();
 		System.out.println("type the Owner Name:");
 		String owner = scan.nextLine();
-		scan.close();
 		return new Account(agency, number, owner, identity);
 	}
 }
