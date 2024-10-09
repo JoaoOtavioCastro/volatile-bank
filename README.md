@@ -1,8 +1,5 @@
 # VBank CLI Application
 
-<!-- Alternar entre os idiomas: -->
-[🇧🇷 Português](#português) | [🇺🇸 English](#english)
-
 ## 🇧🇷 Português
 
 Este é um projeto Java desenvolvido para resolver um exercício do bootcamp de backend em Java da Claro. Ele foi criado com o intuito de treinar o uso das interfaces `List`, `Map` e da `Stream API`.
