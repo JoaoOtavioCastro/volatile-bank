@@ -96,7 +96,7 @@ public class BankCLI {
 		try {
 			System.out.println("Type the account id: ");
 			acccli = new AccountCLI(bank.getAllAccounts().get(sc.nextInt()));
-			acccli.showAccount();
+			acccli.showCLI();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {
