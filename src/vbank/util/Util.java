@@ -23,8 +23,8 @@ public class Util {
 		return lastTransfer;
 	}
 
-	public static String showValue(long value) {
-		return String.valueOf(value / 100);
+	public static double showValue(long value) {
+		return Double.valueOf(value)/100;
 	}
 
 	public static String formattedDate(LocalDateTime date) {

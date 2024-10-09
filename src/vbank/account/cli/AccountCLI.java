@@ -32,8 +32,13 @@ public class AccountCLI {
 				switch (option) {
 				case 1:
 					updateAccount();
+					break;
 				case 2:
 					doTransactions();
+					break;
+				case 0:
+					stop = true;
+					break;
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + option);
 				}
@@ -190,12 +195,12 @@ public class AccountCLI {
 		Scanner scan = new Scanner(System.in);
 		Random rn = new Random();
 		System.out.println("New Account:");
-		int number = rn.nextInt();
+		int number = rn.nextInt(Integer.MAX_VALUE);
 		int agency = 1;
 		System.out.println("type the identity:");
 		String identity = scan.nextLine();
 		System.out.println("type the Owner Name:");
 		String owner = scan.nextLine();
-		return new Account(agency, number, owner, identity);
+		return new Account(agency, number, 0, owner, identity);
 	}
 }
